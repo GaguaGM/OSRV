@@ -97,5 +97,6 @@ int main()
 	for(int i=0; i<dt.N; i++)
 		cout << res[i] << " ";
 	cout << endl;
+	delete res;
 	return 0;
 }
