@@ -222,7 +222,7 @@ void OneTimePad::thread_join() {
 }
 
 void * worker_processing(void * arg) {
-    struct WorkerData * data = (struct WorkerData *) arg;
+    struct WorkerData * data = reinterpret_cast<struct WorkerData *> (arg);//приведение типов
     for(int i = 0; i < data->length; i++) {
         data->output_buffer[i] = (data->crypto_buffer[i] % 127 ^ data->text_buffer[i]);
     }
