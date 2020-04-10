@@ -30,7 +30,7 @@ private:
 
 	static void* calc(void *temp)
 	{
-		LKG* cur = (LKG*) temp;
+		LGK * cur = reinterpret_cast<LGK *>(temp);//приведение типов
 		return cur->calculation(cur);
 	}
 
